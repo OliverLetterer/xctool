@@ -604,6 +604,9 @@ containsFilesModifiedSince:(NSDate *)sinceDate
   NSLog(@"result = %@", result);
   NSLog(@"settings = %@", settings);
   
+  NSArray *schemePaths = [XcodeSubjectInfo schemePathsInContainer:self.subjectProject];
+  NSLog(@"schemePaths = %@", schemePaths);
+  
   assert(settings.count == 1);
   NSDictionary *firstBuildable = [settings allValues][0];
   // The following control where our build output goes - we need to make sure we build the tests
