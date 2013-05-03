@@ -595,7 +595,10 @@ containsFilesModifiedSince:(NSDate *)sinceDate
 
   NSDictionary *result = LaunchTaskAndCaptureOutput(task);
   NSDictionary *settings = BuildSettingsFromOutput(result[@"stdout"]);
-
+  
+  NSLog(@"result = %@", result);
+  NSLog(@"settings = %@", settings);
+  
   assert(settings.count == 1);
   NSDictionary *firstBuildable = [settings allValues][0];
   // The following control where our build output goes - we need to make sure we build the tests
