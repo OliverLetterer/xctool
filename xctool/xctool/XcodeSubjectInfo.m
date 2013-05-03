@@ -596,7 +596,10 @@ containsFilesModifiedSince:(NSDate *)sinceDate
   NSDictionary *result = LaunchTaskAndCaptureOutput(task);
   NSDictionary *settings = BuildSettingsFromOutput(result[@"stdout"]);
   
-  NSLog(@"task = %@", task);
+  NSLog(@"task.launchPath = %@", task.launchPath);
+  NSLog(@"arguments = %@", task.arguments);
+  NSLog(@"environment = %@", task.environment);
+  NSLog(@"currentDirectoryPath = %@", task.currentDirectoryPath);
   
   NSLog(@"result = %@", result);
   NSLog(@"settings = %@", settings);
